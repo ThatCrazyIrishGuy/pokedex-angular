@@ -4,8 +4,9 @@
 <div ng-if="details.name">
     <img ng-src="{{ details.sprite }}" class="animated flip">
     <span class="span-outer">
-    <a href="http://pokeapi.co{{ details.resource_id }}" target="_blank">{{ details.name }}</a>
-  </span>, {{ details.types[0].name }}
+    <h3 style="display:inline">{{ details.name }}</h3>
+    <a>{{ details.typeString }}</a>
+  </span>
     <!--   <p><strong>Released on:</strong> {{ details.Released }} ({{ details.Runtime }})</p>
  -->
     <center>
@@ -73,12 +74,6 @@
             </tr>
         </tbody>
     </table>
-</div>
-<!-- 
-  <p class="outer-p-2">Ratings:<br>
-    <strong>IMDb Rating</strong>: <span class="label label-success">{{ details.imdbRating }}</span><br>
-    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
-  </p> -->
 </div>
 <div ng-if="details.Response==='False'">
     No results found.

@@ -11,6 +11,7 @@ myApp.controller('PokedexController',
                     $scope.details = pokemon;
                     $scope.related = pokemon.evolutions;
                     $scope.details.expandedMoves = [];
+                    $scope.details.typeString = pokemon.types.map(function(elem){ return elem.name; }).join(",");
                     //console.log($scope.related);
                     $scope.details.sprite = 'http://pokeapi.co/media/img/' + pokemon.national_id + '.png'
                     $http.get("http://pokeapi.co" + pokemon.descriptions[pokemon.descriptions.length - 1].resource_uri)
