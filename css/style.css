@@ -9,10 +9,6 @@
     opacity: 0.75;
 }
 
-.outerdiv {
-    margin-top: 70px;
-}
-
 body {
     /*background: transparent url("../images/pokeballs.png") repeat scroll 0% 0%;*/
     overflow-x: hidden;
