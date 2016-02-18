@@ -61,7 +61,7 @@
                 <th>Acuracy</th>
                 <th>Power</th>
                 <th>PP</th>
-                <th>description</th>
+                <th class="hide-on-mobile">description</th>
             </tr>
         </thead>
         <tbody ng:repeat="i in details.expandedMoves">
@@ -70,7 +70,7 @@
                 <td>{{i.accuracy}}</td>
                 <td>{{i.power}}</td>
                 <td>{{i.pp}}</td>
-                <td>{{i.description}}</td>
+                <td class="hide-on-mobile">{{i.description}}</td>
             </tr>
         </tbody>
     </table>
