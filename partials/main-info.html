@@ -12,48 +12,40 @@
     <center>
         <p>{{ details.description }}</p>
     </center>
-    <p class="outer-p">
-        <div class="col-md-6">
-            <div class="inner-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="inner-p" style="display:block;float:left">
                 <span class="label label-danger">Attack :</span> {{ details.attack }}
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="inner-p" style="float:right">
+            <div class="inner-p" style="display:block;float:right">
                 {{ details.attack }} <span class="label label-danger">: Sp. Attack</span>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="inner-p">
+        <div class="col-xs-12">
+            <div class="inner-p" style="display:block;float:left">
                 <span class="label label-primary">Defense :</span> {{ details.defense }}
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="inner-p" style="float:right">
+            <div class="inner-p" style="display:block;float:right">
                 {{ details.defense }} <span class="label label-primary">: Sp. Defense :</span>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="inner-p">
+        <div class="col-xs-12">
+            <div class="inner-p" style="display:block;float:left">
                 <span class="label label-success">HP :</span> {{ details.hp }}
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="inner-p" style="float:right">
+            <div class="inner-p" style="display:block;float:right">
                 {{ details.hp }} <span class="label label-success">: EXP </span>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="inner-p">
+        <div class="col-xs-12">
+            <div class="inner-p" style="display:block;float:left">
                 <span class="label label-warning">Speed :</span> {{ details.speed }}
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="inner-p" style="float:right">
+            <div class="inner-p" style="display:block;float:right">
                 {{ details.catch_rate }} <span class="label label-warning">: Catch Rate </span>
             </div>
         </div>
-    </p>
+    </div>
     <table class="table table-responsive" style="margin-top: 15%">
         <thead>
             <tr>
