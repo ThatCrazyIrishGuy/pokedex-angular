@@ -1,0 +1,38 @@
+<div ng-if="!details">
+  Enter a pokemon name for details
+</div>
+
+<div ng-if="details.name">
+  <img ng-src="{{ details.sprite }}" class="animated flip">
+  <img ng-src="{{ details.sprite }}" class="decoration-image animated flip">
+  <span class="span-outer">
+    <a href="http://pokeapi.co{{ details.resource_id }}" target="_blank">{{ details.name }}</a>
+  </span>, {{ details.types[0].name }}
+
+<!--   <p><strong>Released on:</strong> {{ details.Released }} ({{ details.Runtime }})</p>
+ -->
+  <p>{{ details.description }}</p>
+
+  <p class="outer-p">
+    <div class="inner-p">
+      <span class="label label-danger">Attack :</span> {{ details.attack }}
+    </div>
+    <div class="inner-p">
+      <span class="label label-primary">Defense :</span> {{ details.defense }}
+    </div>
+    <div class="inner-p">
+      <span class="label label-success">HP :</span> {{ details.hp }}
+    </div>
+  </p>
+<!-- 
+  <p class="outer-p-2">Ratings:<br>
+    <strong>IMDb Rating</strong>: <span class="label label-success">{{ details.imdbRating }}</span><br>
+    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
+  </p> -->
+
+  
+</div>
+
+<div ng-if="details.Response==='False'">
+  No results found.
+</div>
