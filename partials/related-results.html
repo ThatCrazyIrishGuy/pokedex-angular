@@ -3,8 +3,9 @@
   <hr/>
   
   <ul class="rel-results">
-    <li ng-repeat="evolution in related">
+    <li ng-repeat="evolution in related" class="list-group-item">
       <a href="#" id="{{ $index + 1 }}" ng-click="update(evolution)">{{ evolution.to }}</a>, {{ evolution.method }}
     </li>
   </ul>
 </div>
+<img ng-src="{{ details.sprite }}" class="decoration-image animated slideInRight" onload="$.this.show()">

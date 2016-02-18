@@ -1,38 +1,85 @@
 <div ng-if="!details">
-  Enter a pokemon name for details
+    Enter a pokemon name for details
 </div>
-
 <div ng-if="details.name">
-  <img ng-src="{{ details.sprite }}" class="animated flip">
-  <img ng-src="{{ details.sprite }}" class="decoration-image animated flip">
-  <span class="span-outer">
+    <img ng-src="{{ details.sprite }}" class="animated flip">
+    <span class="span-outer">
     <a href="http://pokeapi.co{{ details.resource_id }}" target="_blank">{{ details.name }}</a>
   </span>, {{ details.types[0].name }}
-
-<!--   <p><strong>Released on:</strong> {{ details.Released }} ({{ details.Runtime }})</p>
+    <!--   <p><strong>Released on:</strong> {{ details.Released }} ({{ details.Runtime }})</p>
  -->
-  <p>{{ details.description }}</p>
-
-  <p class="outer-p">
-    <div class="inner-p">
-      <span class="label label-danger">Attack :</span> {{ details.attack }}
-    </div>
-    <div class="inner-p">
-      <span class="label label-primary">Defense :</span> {{ details.defense }}
-    </div>
-    <div class="inner-p">
-      <span class="label label-success">HP :</span> {{ details.hp }}
-    </div>
-  </p>
+    <center>
+        <p>{{ details.description }}</p>
+    </center>
+    <p class="outer-p">
+        <div class="col-md-6">
+            <div class="inner-p">
+                <span class="label label-danger">Attack :</span> {{ details.attack }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p" style="float:right">
+                {{ details.attack }} <span class="label label-danger">: Sp. Attack</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p">
+                <span class="label label-primary">Defense :</span> {{ details.defense }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p" style="float:right">
+                {{ details.defense }} <span class="label label-primary">: Sp. Defense :</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p">
+                <span class="label label-success">HP :</span> {{ details.hp }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p" style="float:right">
+                {{ details.hp }} <span class="label label-success">: EXP </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p">
+                <span class="label label-warning">Speed :</span> {{ details.speed }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="inner-p" style="float:right">
+                {{ details.catch_rate }} <span class="label label-warning">: Catch Rate </span>
+            </div>
+        </div>
+    </p>
+    <table class="table table-responsive" style="margin-top: 15%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Acuracy</th>
+                <th>Power</th>
+                <th>PP</th>
+                <th>description</th>
+            </tr>
+        </thead>
+        <tbody ng:repeat="i in details.expandedMoves">
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.accuracy}}</td>
+                <td>{{i.power}}</td>
+                <td>{{i.pp}}</td>
+                <td>{{i.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <!-- 
   <p class="outer-p-2">Ratings:<br>
     <strong>IMDb Rating</strong>: <span class="label label-success">{{ details.imdbRating }}</span><br>
     <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
   </p> -->
-
-  
 </div>
-
 <div ng-if="details.Response==='False'">
-  No results found.
+    No results found.
 </div>

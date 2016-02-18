@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp" ng-controller="PokedexController">
-  <head>
+
+<head>
     <title ng-bind="'Pokedex - ' + details.Title"></title>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-  </head>
+</head>
 
-  <body style="overflow:hidden">
-    <div class="container-fluid outerdiv">
-     
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><span class="span-style">Pokedexr</span></a>
-          </div>
-         
-        </div>
-      </nav>
-
-      <noscript>
-        <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
-      </noscript>
-
-     
-        <div class="input-group search-bar">
-          <input type="text" ng-model="search" ng-change="change()" class="form-control" placeholder="Enter Pokemon Name" autofocus />
-          <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
-        </div>
-
+<body style="overflow-x:hidden">
+    <div class="container outerdiv">
+        <nav class="navbar navbar-fixed-top navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Pokedex</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Pokemon</a></li>
+                        <li><a href="#">Moves</a></li>
+                        <li><a href="#">Items</a></li>
+                        <li><a href="#">Types</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right has-feedback" ng-submit="change()">
+                        <div class="form-group">
+                            <input style="margin-right:-12px" placeholder="Search Pokemon" type="text" ng-model="search"  class="form-control" type="text" autofocus>
+                            <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.nav-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+        <noscript>
+            <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
+        </noscript>
         <div id="main-info" ng-include="'partials/main-info.html'" class="col-md-8"></div>
-
-        <div id="related-results" ng-include="'partials/related-results.html'" class="col-md-4 animated bounce related-results"></div>
-      </div>
+        <div id="related-results" ng-include="'partials/related-results.html'" class="col-md-4 list-group animated slideInRight related-results"></div>
     </div>
-
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
