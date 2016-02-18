@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" ng-controller="PokedexController">
+<html lang="en" ng-app="myApp" ng-controller="PokedexController" ng-init="change()">
 
 <head>
     <title ng-bind="'Pokedex - ' + details.Title"></title>
@@ -32,8 +32,8 @@
                     </ul>
                     <form class="navbar-form navbar-right has-feedback" ng-submit="change()">
                         <div class="form-group">
-                            <input style="margin-right:-12px" placeholder="Search Pokemon" type="text" ng-model="search"  class="form-control" type="text" autofocus>
-                            <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                            <input style="margin-right:-12px" type="text" ng-model="search"  class="form-control" type="text" autofocus>
+                            <i class="glyphicon glyphicon-search form-control-feedback" ></i>
                         </div>
                     </form>
                 </div>

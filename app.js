@@ -3,6 +3,7 @@ var myApp = angular.module('myApp', []);
 myApp.controller('PokedexController',
     function PokedexController($scope, $http) {
         $scope.details = {};
+        $scope.search = "Pikachu";
         $scope.change = function() {
             $http.get("http://pokeapi.co/api/v1/pokemon/" + $scope.search.toLowerCase() + '/')
                 .success(function(pokemon) {
