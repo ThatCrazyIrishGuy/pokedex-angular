@@ -5,7 +5,7 @@ myApp.controller('PokedexController',
         $scope.details = {};
         $scope.search = "Pikachu";
         $scope.change = function() {
-            $http.get("http://pokeapi.co/api/v1/pokemon/" + $scope.search.toLowerCase() + '/')
+            $http.get("https://pokeapi.co/api/v1/pokemon/" + $scope.search.toLowerCase() + '/')
                 .success(function(pokemon) {
                     console.log(pokemon);
                     $scope.details = pokemon;
@@ -13,14 +13,14 @@ myApp.controller('PokedexController',
                     $scope.details.expandedMoves = [];
                     $scope.details.typeString = pokemon.types.map(function(elem){ return elem.name; }).join(",");
                     //console.log($scope.related);
-                    $scope.details.sprite = 'http://pokeapi.co/media/img/' + pokemon.national_id + '.png'
-                    $http.get("http://pokeapi.co" + pokemon.descriptions[pokemon.descriptions.length - 1].resource_uri)
+                    $scope.details.sprite = 'https://pokeapi.co/media/img/' + pokemon.national_id + '.png'
+                    $http.get("https://pokeapi.co" + pokemon.descriptions[pokemon.descriptions.length - 1].resource_uri)
                         .success(function(detail) {
                             //console.log(detail);
                             $scope.details.description = detail.description;
                         });
                     pokemon.moves.forEach(function(move) {
-                        $http.get("http://pokeapi.co" + move.resource_uri)
+                        $http.get("https://pokeapi.co" + move.resource_uri)
                             .success(function(detail) {
                                 $scope.details.expandedMoves.push(detail);
                             });
